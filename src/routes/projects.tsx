@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ExpertFeature } from "@/components/ExpertFeature";
 import { ProductDesignNotes } from "@/components/ProductDesignNotes";
 import { ProductMetrics } from "@/components/ProductMetrics";
 import { ProfileNav } from "@/components/ProfileNav";
@@ -95,42 +96,6 @@ const studies = [
   },
 ];
 
-const desks = [
-  {
-    name: "Banknote",
-    logo: "/apps/banknotes-logo.png",
-    report: "Denomination, printer, watermark, signature, serial number, both sides, and a holding note.",
-    links: [
-      { label: "Expert desk", href: "https://experts.banknotes-experts.qaserver.trackzio.com" },
-      { label: "Admin", href: "https://admin.banknotes-experts.qaserver.trackzio.com" },
-    ],
-  },
-  {
-    name: "Coinzy",
-    logo: "/apps/coinzy-logo.png",
-    report: "Both faces, rarity, Sheldon condition, authenticity, and a written recommendation. Skip or continue from the queue.",
-    links: [{ label: "Queue", href: "https://coinzy-experts-dashboard.trackzio.com/expert/queue" }],
-  },
-  {
-    name: "Antiqzy",
-    logo: "/apps/antiqzy-logo.png",
-    report: "Period, origin, maker, hand-crafted or machine-made, marks, restoration, and how many copies exist.",
-    links: [{ label: "Antiqzy", href: "https://trackzio.com/apps/antiqzy" }],
-  },
-  {
-    name: "Rockzy",
-    logo: "/apps/rockzy-logo-new.png",
-    report: "Crystal system, lustre, chemical formula, radioactivity, cleaning, durability, and market value.",
-    links: [{ label: "Rockzy", href: "https://trackzio.com/apps/rockzy" }],
-  },
-  {
-    name: "Insecto",
-    logo: "/apps/insecto-logo.png",
-    report: "Four fields: species, risk, impact, and the next step. Safety, garden, or a species check.",
-    links: [{ label: "Insecto", href: "https://trackzio.com/apps/insecto" }],
-  },
-];
-
 function Projects() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
@@ -212,25 +177,10 @@ function Projects() {
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">03 · Web</p>
         <h2 className="mt-2 font-display text-3xl sm:text-4xl">Expert desks</h2>
         <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-          The same shell — queue, drafts, history, profile — and a different report for each object. Admin stays off the expert screen.
+          Four products. The navigation matches. The report is written for the object in front of the expert.
         </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {desks.map((desk) => (
-            <article key={desk.name} className="flex flex-col rounded-2xl border border-border bg-card p-5">
-              <div className="flex items-center gap-3">
-                <img src={desk.logo} alt="" className="size-10 rounded-xl object-cover" />
-                <h3 className="font-display text-xl">{desk.name}</h3>
-              </div>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{desk.report}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {desk.links.map((link) => (
-                  <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="rounded-full bg-secondary px-3 py-1 text-xs hover:text-primary">
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </article>
-          ))}
+        <div className="mt-6">
+          <ExpertFeature />
         </div>
       </section>
 

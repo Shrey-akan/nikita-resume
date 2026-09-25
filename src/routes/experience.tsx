@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ExpertFeature } from "@/components/ExpertFeature";
 import { ProfileNav } from "@/components/ProfileNav";
 export const Route = createFileRoute("/experience")({
   head: () => ({
@@ -221,10 +222,13 @@ function Experience() {
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">Web apps</p>
         <h2 className="mt-2 font-display text-3xl sm:text-4xl">Expert desks</h2>
         <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-          Banknote, Coinzy, Antiqzy, and Rockzy each have a queue and a report. Insecto is an assessment: safety, garden, or the species. The forms are not copied across.
+          Taken from the expert web apps. Queue and admin are shared. The form sections are not.
         </p>
         <div className="mt-6">
-          <JobCards items={jobs.filter((job) => "desk" in job && job.desk)} />
+          <ExpertFeature />
+        </div>
+        <div className="mt-4">
+          <JobCards items={jobs.filter((job) => job.company === "Insecto Expert Assessment")} />
         </div>
       </section>
 
