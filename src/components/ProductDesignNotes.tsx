@@ -35,7 +35,7 @@ const navApproaches = [
 
 export function ProductDesignNotes() {
   return (
-    <div className="mt-16 space-y-16">
+    <div className="space-y-10">
       <section>
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">Coinzy · Experiments</p>
         <h2 className="mt-2 font-display text-3xl sm:text-4xl">Three tests on the live product</h2>
@@ -107,68 +107,6 @@ export function ProductDesignNotes() {
               </li>
             ))}
           </ul>
-        </article>
-      </section>
-
-      <section>
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">Banknote · Expert report</p>
-        <h2 className="mt-2 font-display text-3xl sm:text-4xl">A bill, not a coin</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          The note desk uses the same queue shape as Coinzy and a different report. Admin stays on its own screens.
-        </p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <article className="rounded-2xl border border-border bg-card p-5">
-            <h3 className="font-display text-xl">What the expert writes</h3>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>Name, denomination, issuer, year, period, printer, and type.</li>
-              <li>Watermark, signature, and serial number.</li>
-              <li>Obverse and reverse, condition, authenticity.</li>
-              <li>Holding period, yearly growth, where to sell, and a conclusion.</li>
-            </ul>
-          </article>
-          <article className="rounded-2xl border border-border bg-card p-5">
-            <h3 className="font-display text-xl">Two desks</h3>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>Expert: queue, drafts, history, profile. Skip or open a request. Deadline on the row.</li>
-              <li>Admin: experts, users, reports, allocation, refunds, settings.</li>
-            </ul>
-            <div className="mt-4 flex flex-wrap gap-2 text-xs">
-              <a className="rounded-full border border-border px-3 py-1 hover:text-primary" href="https://experts.banknotes-experts.qaserver.trackzio.com" target="_blank" rel="noreferrer">Expert desk</a>
-              <a className="rounded-full border border-border px-3 py-1 hover:text-primary" href="https://admin.banknotes-experts.qaserver.trackzio.com" target="_blank" rel="noreferrer">Admin desk</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section>
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">Insecto · Expert assessment</p>
-        <h2 className="mt-2 font-display text-3xl sm:text-4xl">Safety, garden, or the species</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          A coin report sells grade and value. An insect report tells someone what it is and what to do. The user picks a concern, or receives one unified note.
-        </p>
-        <div className="mt-6 grid gap-4 lg:grid-cols-3">
-          {[
-            ["Safety and risk", "Bite, sting, toxicity, disease, first aid, and what to do next. For a home, a child, or a pet."],
-            ["Crop and garden", "Pest or beneficial, the damage, a treatment, and how to stop it coming back."],
-            ["Species verification", "Confirmed species, rarity, conservation, ecological role, habitat, and look-alikes."],
-          ].map(([title, copy]) => (
-            <article key={title} className="rounded-2xl border border-border bg-card p-5">
-              <h3 className="font-display text-xl">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
-            </article>
-          ))}
-        </div>
-        <article className="mt-4 rounded-2xl border border-border bg-card p-5 sm:p-6">
-          <h3 className="font-display text-xl">Unified report, four fields</h3>
-          <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-            Every report still opens with an expert summary, the species, physical traits, recommendations, and a PDF. The body is four fields, and only what applies to that insect is filled in.
-          </p>
-          <ol className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-            <li><span className="font-medium">1. Species.</span> <span className="text-muted-foreground">Confirmed or likely name, the marks that decide it, confidence.</span></li>
-            <li><span className="font-medium">2. Risk.</span> <span className="text-muted-foreground">People and pets, bite or sting, disease, what to do if bitten.</span></li>
-            <li><span className="font-medium">3. Impact.</span> <span className="text-muted-foreground">Pest or beneficial, plants or the house, how serious the infestation is.</span></li>
-            <li><span className="font-medium">4. Next step.</span> <span className="text-muted-foreground">Immediate action, a home remedy, removal, prevention, and conservation if it matters.</span></li>
-          </ol>
         </article>
       </section>
 

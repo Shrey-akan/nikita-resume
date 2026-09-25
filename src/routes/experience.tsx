@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProfileNav } from "@/components/ProfileNav";
-import { TrackzioApps } from "@/components/TrackzioApps";
-
 export const Route = createFileRoute("/experience")({
   head: () => ({
     meta: [
@@ -230,17 +228,7 @@ function Experience() {
         </div>
       </section>
 
-      <section className="mt-8">
-        <h2 className="font-display text-2xl sm:text-3xl">Banknote and Coinzy</h2>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-          Published downloads, rating, and daily users for the two identification apps.
-        </p>
-        <div className="mt-4">
-          <TrackzioApps />
-        </div>
-      </section>
-
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+      <div className="mt-16 grid gap-4 md:grid-cols-2">
         <section className="rounded-[1.6rem] bg-surface p-6">
           <h2 className="font-display text-2xl">Education</h2>
           <p className="mt-4 font-medium">Bachelor of CSE · CGPA 7.6 / 10</p>

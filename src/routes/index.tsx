@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { DownloadDocs } from "@/components/DownloadDocs";
-import { ProductMetrics } from "@/components/ProductMetrics";
 import { formatBlogDate } from "@/lib/blog";
 import { banknoteLive, coinzyLive } from "@/lib/product-metrics";
 import { PROFILE } from "@/lib/resume";
@@ -210,9 +209,6 @@ function Index() {
               </span>
             </a>
           ))}
-        </div>
-        <div className="mt-4">
-          <ProductMetrics />
         </div>
       </section>
 
