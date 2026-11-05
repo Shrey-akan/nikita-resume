@@ -5,6 +5,7 @@ import { BlogStats } from "@/components/BlogStats";
 import { UserAvatar } from "@/components/UserAvatar";
 import { WritePostButton } from "@/components/WritePostButton";
 import { BlogBody, formatBlogDate, type BlogPost } from "@/lib/blog";
+import { SEO_KEYWORDS } from "@/lib/seo";
 import { getBlogBySlug, recordBlogView } from "@/server/blogs";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -20,7 +21,14 @@ export const Route = createFileRoute("/blog/$slug")({
         { title: post ? `${post.title} — Nikita Nautiyal` : "Journal — Nikita Nautiyal" },
         {
           name: "description",
-          content: post?.excerpt ?? "A note from Nikita Nautiyal.",
+          content: post?.excerpt ?? "A UI/UX design note from Nikita Nautiyal.",
+        },
+        { name: "keywords", content: SEO_KEYWORDS },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: post ? `${post.title} — Nikita Nautiyal` : "Journal — Nikita Nautiyal" },
+        {
+          property: "og:description",
+          content: post?.excerpt ?? "A UI/UX design note from Nikita Nautiyal.",
         },
       ],
     };

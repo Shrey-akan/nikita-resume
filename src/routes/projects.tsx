@@ -3,17 +3,14 @@ import { ExpertFeature } from "@/components/ExpertFeature";
 import { FigmaWork } from "@/components/FigmaWork";
 import { ProfileNav } from "@/components/ProfileNav";
 
+import { seoMeta } from "@/lib/seo";
+
 export const Route = createFileRoute("/projects")({
   head: () => ({
-    meta: [
-      { title: "Case studies — Nikita Nautiyal" },
-      {
-        name: "description",
-        content:
-          "UI/UX case studies: role, process, and deliverables for Banknote, Coinzy, 112, Genuinest, and earlier product work.",
-      },
-      { property: "og:title", content: "Case studies — Nikita Nautiyal" },
-    ],
+    meta: seoMeta(
+      "UI/UX Projects and Case Studies | Nikita Nautiyal",
+      "UI/UX projects and case studies by Nikita Nautiyal: mobile app design, Figma prototypes, and product design for live apps.",
+    ),
   }),
   component: Projects,
 });

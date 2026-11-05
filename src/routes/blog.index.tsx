@@ -5,16 +5,14 @@ import { WritePostButton } from "@/components/WritePostButton";
 import { formatBlogDate, type BlogCard } from "@/lib/blog";
 import { getBlogIndex } from "@/server/blogs";
 
+import { seoMeta } from "@/lib/seo";
+
 export const Route = createFileRoute("/blog/")({
   head: () => ({
-    meta: [
-      { title: "Journal — Nikita Nautiyal" },
-      {
-        name: "description",
-        content: "UI/UX design notes from Nikita Nautiyal: the problem, the flow, and the interface.",
-      },
-      { property: "og:title", content: "Journal — Nikita Nautiyal" },
-    ],
+    meta: seoMeta(
+      "UI/UX Design Journal | Nikita Nautiyal",
+      "UI/UX design journal by Nikita Nautiyal: product design notes on flows, interfaces, and Figma.",
+    ),
   }),
   loader: () => getBlogIndex(),
   component: BlogIndex,

@@ -2,17 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DownloadResumeButton } from "@/components/DownloadDocs";
 import { ExpertFeature } from "@/components/ExpertFeature";
 import { ProfileNav } from "@/components/ProfileNav";
+import { seoMeta } from "@/lib/seo";
+
 export const Route = createFileRoute("/experience")({
   head: () => ({
-    meta: [
-      { title: "Experience — Nikita Nautiyal" },
-      {
-        name: "description",
-        content:
-          "Associate Product Designer at Trackzio, UX/UI at Genuinest, and a web design internship at Setumesh.",
-      },
-      { property: "og:title", content: "Experience — Nikita Nautiyal" },
-    ],
+    meta: seoMeta(
+      "Work Experience | Nikita Nautiyal, Product Designer",
+      "Work experience of Nikita Nautiyal: Associate Product Designer at Trackzio, UX/UI at Genuinest, and web design at Setumesh.",
+    ),
   }),
   component: Experience,
 });

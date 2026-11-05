@@ -3,16 +3,14 @@ import { ContactForm } from "@/components/ContactForm";
 import { DownloadDocs } from "@/components/DownloadDocs";
 import { PROFILE } from "@/lib/resume";
 
+import { seoMeta } from "@/lib/seo";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    meta: [
-      { title: "Contact — Nikita Nautiyal" },
-      {
-        name: "description",
-        content: "Contact Nikita Nautiyal, Associate Product Designer in Bengaluru.",
-      },
-      { property: "og:title", content: "Contact — Nikita Nautiyal" },
-    ],
+    meta: seoMeta(
+      "Contact Nikita Nautiyal | Product Designer, Bengaluru",
+      "Contact Nikita Nautiyal, UI/UX product designer in Bengaluru, for product design roles and collaborations.",
+    ),
   }),
   component: Contact,
 });

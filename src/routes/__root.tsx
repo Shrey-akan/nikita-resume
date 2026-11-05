@@ -7,6 +7,7 @@ import { SiteMotion } from "@/components/SiteMotion";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
+import { personSchema, SEO_KEYWORDS } from "@/lib/seo";
 
 import appCss from "../styles.css?url";
 
@@ -37,36 +38,28 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nikita Nautiyal — Associate Product Designer" },
+      { title: "Nikita Nautiyal | UI/UX Product Designer in Bengaluru" },
       {
         name: "description",
         content:
-          "Portfolio of Nikita Nautiyal, Associate Product Designer in Bengaluru. UI/UX for mobile and web, Figma systems, and frontend handovers.",
+          "Nikita Nautiyal is a UI/UX product designer in Bengaluru. Portfolio of mobile and web design, Figma wireframes, prototyping, and React.js handovers.",
       },
+      { name: "keywords", content: SEO_KEYWORDS },
+      { name: "robots", content: "index, follow" },
       { name: "author", content: "Nikita Nautiyal" },
-      { property: "og:title", content: "Nikita Nautiyal — Associate Product Designer" },
+      { property: "og:title", content: "Nikita Nautiyal | UI/UX Product Designer in Bengaluru" },
       {
         property: "og:description",
         content:
-          "Portfolio of Nikita Nautiyal, Associate Product Designer in Bengaluru. UI/UX for mobile and web, Figma systems, and frontend handovers.",
+          "UI/UX product designer in Bengaluru. Mobile and web design, Figma wireframes, prototyping, and React.js handovers.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Nikita Nautiyal — Associate Product Designer" },
+      { name: "twitter:title", content: "Nikita Nautiyal | UI/UX Product Designer in Bengaluru" },
       {
         name: "twitter:description",
         content:
-          "Portfolio of Nikita Nautiyal, Associate Product Designer in Bengaluru. UI/UX for mobile and web, Figma systems, and frontend handovers.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b620c84-8510-4c2f-aa92-7379263d85c1/id-preview-68182519--4e41171c-80da-4e56-8477-3c3010f551c9.lovable.app-1776998857146.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b620c84-8510-4c2f-aa92-7379263d85c1/id-preview-68182519--4e41171c-80da-4e56-8477-3c3010f551c9.lovable.app-1776998857146.png",
+          "UI/UX product designer in Bengaluru. Mobile and web design, Figma wireframes, prototyping, and React.js handovers.",
       },
     ],
     links: [
@@ -98,6 +91,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
       <body>

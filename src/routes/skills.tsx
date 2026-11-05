@@ -1,17 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProfileNav } from "@/components/ProfileNav";
 
+import { seoMeta } from "@/lib/seo";
+
 export const Route = createFileRoute("/skills")({
   head: () => ({
-    meta: [
-      { title: "Skills — Nikita Nautiyal" },
-      {
-        name: "description",
-        content:
-          "UI/UX, wireframing, prototyping, journey mapping, React.js, and generative AI.",
-      },
-      { property: "og:title", content: "Skills — Nikita Nautiyal" },
-    ],
+    meta: seoMeta(
+      "UI/UX Skills | Figma, Wireframing, React.js | Nikita Nautiyal",
+      "Skills of Nikita Nautiyal: UI/UX, wireframing, prototyping, journey mapping, responsive design, Figma, React.js, and generative AI.",
+    ),
   }),
   component: Skills,
 });

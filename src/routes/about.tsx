@@ -2,18 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DownloadDocs } from "@/components/DownloadDocs";
 import { ProfileNav } from "@/components/ProfileNav";
 import { PROFILE } from "@/lib/resume";
+import { seoMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
-    meta: [
-      { title: "About — Nikita Nautiyal" },
-      {
-        name: "description",
-        content:
-          "Nikita Nautiyal, Associate Product Designer in Bengaluru. Trackzio, Genuinest, and Setumesh.",
-      },
-      { property: "og:title", content: "About — Nikita Nautiyal" },
-    ],
+    meta: seoMeta(
+      "About Nikita Nautiyal | UI/UX Product Designer",
+      "About Nikita Nautiyal, associate product designer in Bengaluru. UI/UX for Trackzio and Genuinest, Figma systems, and React.js.",
+    ),
   }),
   component: About,
 });
