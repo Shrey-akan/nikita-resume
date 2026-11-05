@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Genuinest">
+  <rect width="800" height="1000" fill="#f4efe6"/>
+  <circle cx="620" cy="180" r="140" fill="#e7d3c0"/>
+  <circle cx="180" cy="820" r="180" fill="#eadfd2"/>
+  <text x="72" y="470" fill="#2f7d46" font-family="Georgia, serif" font-size="42" letter-spacing="6">SOCIAL</text>
+  <text x="72" y="560" fill="#3a322c" font-family="Georgia, serif" font-size="92">Genuinest</text>
+</svg>

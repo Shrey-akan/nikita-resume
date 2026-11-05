@@ -1,10 +1,19 @@
+import type { MouseEvent } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { UserAvatar } from "@/components/UserAvatar";
-import { headerLinks } from "@/lib/nav";
+import { RESUME_PDF_FILENAME, RESUME_PDF_PATH } from "@/lib/resume";
+
+const sectionLinks = [
+  { href: "/", id: "top", label: "Home" },
+  { href: "/#work", id: "work", label: "Work experience" },
+  { href: "/#skills", id: "skills", label: "Skills" },
+  { href: "/#projects", id: "projects", label: "Projects" },
+  { href: "/#contact", id: "contact", label: "Contact me" },
+] as const;
 
 const navLinkClass =
   "block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors";
@@ -54,26 +63,48 @@ export function SiteHeader() {
     setMenuOpen(false);
   }
 
+  function onSectionClick(event: MouseEvent<HTMLAnchorElement>, id: string) {
+    event.preventDefault();
+    event.stopPropagation();
+    document.body.style.overflow = "";
+    closeNav();
+    if (id === "top") {
+      if (window.location.pathname !== "/") {
+        window.location.assign("/");
+        return;
+      }
+      window.setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.history.replaceState(null, "", "/");
+      }, 40);
+      return;
+    }
+    if (window.location.pathname !== "/") {
+      window.location.assign(`/#${id}`);
+      return;
+    }
+    window.setTimeout(() => {
+      const section = document.getElementById(id);
+      if (!section) return;
+      const top = section.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      window.history.replaceState(null, "", `/#${id}`);
+    }, 40);
+  }
+
   return (
     <header ref={headerRef} className="sticky top-0 z-40 border-b border-border/50 bg-background/75 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:gap-4 sm:px-6">
-        <Link to="/" className="flex min-w-0 shrink-0 items-center gap-2" onClick={closeNav}>
-          <span className="inline-flex size-9 items-center justify-center rounded-full bg-primary font-display text-sm text-primary-foreground">
-            NN
-          </span>
-          <span className="font-display text-lg tracking-tight">Nikita</span>
-        </Link>
-
-        <nav className="ml-auto hidden items-center gap-1 lg:flex" aria-label="Primary">
-          {headerLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-center gap-1 px-3 sm:gap-2 sm:px-6">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+          {sectionLinks.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
               className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              activeProps={{ className: "rounded-md bg-secondary/50 px-3 py-2 text-sm text-foreground" }}
+              onClick={(event) => onSectionClick(event, link.id)}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           {ready && user?.role === "admin" ? (
             <Link
@@ -86,7 +117,14 @@ export function SiteHeader() {
           ) : null}
         </nav>
 
-        <div className="ml-auto flex items-center gap-1.5 sm:gap-2 lg:ml-0">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <a
+            href={RESUME_PDF_PATH}
+            download={RESUME_PDF_FILENAME}
+            className="inline-flex items-center rounded-full bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03] sm:px-4"
+          >
+            Download resume
+          </a>
           <ThemeToggle />
           {ready && user ? (
             <div className="relative" ref={menuRef}>
@@ -157,16 +195,29 @@ export function SiteHeader() {
           aria-label="Mobile"
         >
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
-            {headerLinks.map((link) => (
-              <Link key={link.to} to={link.to} className={navLinkClass} activeProps={{ className: navActiveClass }} onClick={closeNav}>
+            {sectionLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                className={navLinkClass}
+                onClick={(event) => onSectionClick(event, link.id)}
+              >
                 {link.label}
-              </Link>
+              </a>
             ))}
             {ready && user?.role === "admin" ? (
               <Link to="/studio" className={navLinkClass} activeProps={{ className: navActiveClass }} onClick={closeNav}>
                 Admin
               </Link>
             ) : null}
+            <a
+              href={RESUME_PDF_PATH}
+              download={RESUME_PDF_FILENAME}
+              className="mt-1 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
+              onClick={closeNav}
+            >
+              Download resume
+            </a>
             <Link to="/write" className={navLinkClass} activeProps={{ className: navActiveClass }} onClick={closeNav}>
               Write
             </Link>

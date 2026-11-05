@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact — Nikita Nautiyal" },
       {
         name: "description",
-        content: "Contact Nikita Nautiyal, UI/UX designer.",
+        content: "Contact Nikita Nautiyal, Associate Product Designer in Bengaluru.",
       },
       { property: "og:title", content: "Contact — Nikita Nautiyal" },
     ],
@@ -20,6 +20,7 @@ export const Route = createFileRoute("/contact")({
 const channels = [
   { label: "Email", value: PROFILE.email, href: `mailto:${PROFILE.email}` },
   { label: "Phone", value: PROFILE.phone, href: PROFILE.phoneHref },
+  { label: "LinkedIn", value: "linkedin.com/in/nikitades", href: PROFILE.linkedin },
 ];
 
 function Contact() {

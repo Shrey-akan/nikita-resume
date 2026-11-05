@@ -4,9 +4,7 @@ export type TrackzioApp = {
   logo: string;
   href: string;
   expert: string;
-  downloads: string;
-  rating: string;
-  dau: string;
+  features: string[];
 };
 
 export const trackzioApps: TrackzioApp[] = [
@@ -14,21 +12,17 @@ export const trackzioApps: TrackzioApp[] = [
     name: "Coinzy",
     blurb: "Coins",
     logo: "/apps/coinzy-logo.png",
-    href: "https://trackzio.com/apps/coinzy",
+    href: "https://play.google.com/store/apps/details?id=com.coinzy.trackzio",
     expert: "Coin appraisal",
-    downloads: "150K+",
-    rating: "4.5+",
-    dau: "30K+",
+    features: ["AI identifier", "Expert appraisal", "Global catalogue"],
   },
   {
     name: "Banknote",
     blurb: "Banknotes",
     logo: "/apps/banknotes-logo.png",
-    href: "https://trackzio.com/apps/banknotes",
+    href: "https://play.google.com/store/apps/details?id=com.trackzio.banknote&pcampaignid=web_share",
     expert: "Note evaluation",
-    downloads: "40K+",
-    rating: "4.3+",
-    dau: "7K+",
+    features: ["AI identifier", "Security features", "Global catalogue"],
   },
   {
     name: "Insecto",
@@ -36,9 +30,7 @@ export const trackzioApps: TrackzioApp[] = [
     logo: "/apps/insecto-logo.png",
     href: "https://trackzio.com/apps/insecto",
     expert: "Species review",
-    downloads: "Coming soon",
-    rating: "4.5+",
-    dau: "Coming soon",
+    features: ["AI identifier", "Bite advice", "AI expert"],
   },
   {
     name: "Habiteazy",
@@ -46,9 +38,7 @@ export const trackzioApps: TrackzioApp[] = [
     logo: "/apps/habiteazy-logo.png",
     href: "https://trackzio.com/apps/habiteazy",
     expert: "Progress review",
-    downloads: "250K+",
-    rating: "4.4+",
-    dau: "30K+",
+    features: ["Habits", "Stats and insights", "Reminders"],
   },
   {
     name: "Rockzy",
@@ -56,38 +46,30 @@ export const trackzioApps: TrackzioApp[] = [
     logo: "/apps/rockzy-logo-new.png",
     href: "https://trackzio.com/apps/rockzy",
     expert: "Mineral review",
-    downloads: "Coming soon",
-    rating: "4.5+",
-    dau: "Coming soon",
+    features: ["AI identifier", "Mineral catalogue", "Expert review"],
   },
   {
     name: "Plantzy",
     blurb: "Plants",
     logo: "/apps/plantzy-logo.png",
-    href: "https://trackzio.com/apps/plantzy",
+    href: "https://play.google.com/store/apps/details?id=com.trackzio.plants&pcampaignid=web_share",
     expert: "Plant diagnosis",
-    downloads: "Coming soon",
-    rating: "Coming soon",
-    dau: "Coming soon",
+    features: ["AI plant identification", "Care schedules", "AI expert"],
   },
   {
     name: "Antiqzy",
     blurb: "Antiques",
     logo: "/apps/antiqzy-logo.png",
-    href: "https://trackzio.com/apps/antiqzy",
+    href: "https://play.google.com/store/apps/details?id=com.trackzio.antiquevintage&pcampaignid=web_share",
     expert: "Antique appraisal",
-    downloads: "Coming soon",
-    rating: "Coming soon",
-    dau: "Coming soon",
+    features: ["AI identification", "Object review", "Ask AI"],
   },
   {
     name: "Shroomzy",
     blurb: "Mushrooms",
     logo: "/apps/shroomzy-logo.png",
-    href: "https://trackzio.com/apps/shroomzy",
+    href: "https://play.google.com/store/apps/details?id=com.trackzio.mushrooms&pcampaignid=web_share",
     expert: "Fungi review",
-    downloads: "Coming soon",
-    rating: "Coming soon",
-    dau: "Coming soon",
+    features: ["AI identification", "Toxicity guide", "Ask AI"],
   },
 ];

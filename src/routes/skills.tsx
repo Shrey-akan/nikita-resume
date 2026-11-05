@@ -7,7 +7,8 @@ export const Route = createFileRoute("/skills")({
       { title: "Skills — Nikita Nautiyal" },
       {
         name: "description",
-        content: "Design skills: Figma, research, flows, prototyping, Framer, and interface craft.",
+        content:
+          "UI/UX, wireframing, prototyping, journey mapping, React.js, and generative AI.",
       },
       { property: "og:title", content: "Skills — Nikita Nautiyal" },
     ],
@@ -17,26 +18,20 @@ export const Route = createFileRoute("/skills")({
 
 const groups = [
   {
-    title: "Craft",
-    items: ["UI", "UX", "Interaction design", "Layout design", "Visualization", "Responsive design"],
+    title: "Design",
+    items: ["UI/UX", "UI/UX testing", "Wireframing", "Prototyping", "Responsive design", "Journey mapping"],
   },
   {
-    title: "Research",
-    items: [
-      "User research",
-      "User journey mapping",
-      "Flow analysis",
-      "Usability gaps",
-      "Empathy-driven problem solving",
-    ],
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "React.js"],
   },
   {
-    title: "Product",
-    items: ["Onboarding design", "Wireframing", "Prototyping", "Design systems", "Content hierarchy"],
+    title: "Content",
+    items: ["Generative AI", "Content creation", "Video editing"],
   },
   {
-    title: "Tools",
-    items: ["Figma", "Framer", "Illustrator", "Photoshop", "HTML", "CSS"],
+    title: "Languages",
+    items: ["English", "Hindi"],
   },
 ];
 
@@ -46,7 +41,7 @@ function Skills() {
       <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Skills</p>
       <h1 className="mt-4 font-display text-5xl leading-[0.95] sm:text-7xl">How the work gets made</h1>
       <p className="mt-6 max-w-2xl text-muted-foreground">
-        Research and friction-finding first, then flows, components, and high-fidelity prototypes.
+        UI/UX for mobile and web, from research and wireframes through frontend handovers. Additional knowledge includes React.js, HTML, CSS, and JavaScript, plus generative AI and video editing.
       </p>
       <ProfileNav className="mt-8 mb-12" />
       <div className="grid gap-4 md:grid-cols-2">

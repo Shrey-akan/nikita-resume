@@ -11,7 +11,7 @@ export const Route = createFileRoute("/blog/")({
       { title: "Journal — Nikita Nautiyal" },
       {
         name: "description",
-        content: "Design notes and journal posts from Nikita Nautiyal.",
+        content: "UI/UX design notes from Nikita Nautiyal: the problem, the flow, and the interface.",
       },
       { property: "og:title", content: "Journal — Nikita Nautiyal" },
     ],
@@ -27,11 +27,11 @@ function BlogIndex() {
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20 md:py-28">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-primary mb-6">Writing</p>
-          <h1 className="font-display text-4xl leading-[1] text-balance sm:text-5xl md:text-7xl">Blog</h1>
+          <p className="font-mono text-xs uppercase tracking-widest text-primary mb-6">Journal</p>
+          <h1 className="font-display text-4xl leading-[1] text-balance sm:text-5xl md:text-7xl">Design notes</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Featured post, then the top 100. Like, comment, or write your own — you’ll be asked to
-            sign in if you don’t have an account yet.
+            Case notes from the portfolio: the problem, the flow, and the interface. The featured
+            note leads. The rest follow.
           </p>
         </div>
         <WritePostButton />
@@ -52,7 +52,7 @@ function BlogIndex() {
 
       <section className="mt-20">
         <div className="flex items-baseline justify-between mb-8">
-          <h2 className="font-display text-3xl md:text-4xl">Top 100</h2>
+          <h2 className="font-display text-3xl md:text-4xl">All notes</h2>
           <p className="font-mono text-xs text-muted-foreground">{top.length} published</p>
         </div>
         {top.length === 0 ? (

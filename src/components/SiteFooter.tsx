@@ -10,11 +10,11 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-border/70">
+    <footer className="relative z-10 mt-16 border-t border-border/70">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
         <div>
           <p className="font-display text-3xl">Nikita Nautiyal</p>
-          <p className="mt-2 text-sm text-muted-foreground">UI/UX designer · India</p>
+          <p className="mt-2 text-sm text-muted-foreground">{PROFILE.title} · {PROFILE.location}</p>
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Visit</p>
@@ -55,6 +55,9 @@ export function SiteFooter() {
           </a>
           <a href={PROFILE.phoneHref} className="text-muted-foreground hover:text-primary">
             {PROFILE.phone}
+          </a>
+          <a href={PROFILE.linkedin} className="text-muted-foreground hover:text-primary" target="_blank" rel="noreferrer">
+            LinkedIn
           </a>
         </div>
       </div>

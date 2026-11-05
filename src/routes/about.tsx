@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "About Nikita Nautiyal, UI/UX designer. Education, certifications, leadership, and creative work.",
+          "Nikita Nautiyal, Associate Product Designer in Bengaluru. Trackzio, Genuinest, and Setumesh.",
       },
       { property: "og:title", content: "About — Nikita Nautiyal" },
     ],
@@ -31,35 +31,26 @@ const certifications = [
   },
 ];
 
-const roles = [
-  { title: "Outreach Executive", org: "AIT Traids Club" },
-  { title: "Sports Captain", org: "SDSC Sports Club" },
-];
-
-const recognition = [
+const achievements = [
   {
-    label: "Academic",
-    items: [
-      "Gold medal, state mathematics olympiad",
-      "Top 15 in the state",
-    ],
+    title: "Live Genuinest onboarding",
+    detail: "Onboarding UI for the live app, then a Play Store launch.",
   },
   {
-    label: "Athletics",
-    items: [
-      "Five college medals: table tennis, relay, long jump, triple jump, softball",
-      "2nd place, school badminton championship",
-    ],
+    title: "Four live store listings",
+    detail: "App icons and store screenshots for Trackzio apps on Google Play and the App Store.",
   },
   {
-    label: "Competitions",
-    items: [
-      "2nd runners-up, sketching",
-      "Winner, school buzzer quiz",
-      "Runners-up, B-quiz, SDS",
-      "Winner, chess, Yalgaar",
-      "3rd, poetry, Kagaz Ki Kashti",
-    ],
+    title: "15% higher retention",
+    detail: "AI identification UX, from research and funnel review through the redesigned journey.",
+  },
+  {
+    title: "90k+ views",
+    detail: "Product content and AI video across Facebook, TikTok, and YouTube.",
+  },
+  {
+    title: "Expert portal",
+    detail: "End-to-end UI for the expert dashboard on web and mobile.",
   },
 ];
 
@@ -68,36 +59,42 @@ function About() {
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-20">
       <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">About</p>
       <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] sm:text-6xl">
-        Product design for shipped consumer apps.
+        Associate product designer for mobile and web.
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-        UI/UX designer working from research through high-fidelity prototypes. The work is
-        flows, systems, and interfaces that a product team can build.
+        UI/UX design and frontend handovers. Research, prototyping, wireframes, and scalable
+        design systems in Figma, with React.js for a few of the web apps.
       </p>
       <ProfileNav className="mt-8" />
 
       <div className="mt-12 grid gap-10 lg:grid-cols-3">
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground lg:col-span-2 sm:text-lg">
           <p>
-            At Trackzio,{" "}
+            Associate Product Designer at Trackzio since April 2026, in Bengaluru. The work covers{" "}
             <a href="https://trackzio.com/apps/banknotes" className="text-foreground underline-offset-4 hover:underline" target="_blank" rel="noreferrer">
               Banknote
             </a>{" "}
             and{" "}
             <a href="https://trackzio.com/apps/coinzy" className="text-foreground underline-offset-4 hover:underline" target="_blank" rel="noreferrer">
               Coinzy
+            </a>
+            : onboarding, camera identification, and expert review, on mobile and web. A few web apps on{" "}
+            <a href="https://trackzio.com" className="text-foreground underline-offset-4 hover:underline" target="_blank" rel="noreferrer">
+              trackzio.com
             </a>{" "}
-            are separate products. One identifies a banknote. The other identifies a coin,
-            including both faces. Each has its own onboarding, scan limit, camera, result, and
-            expert review, on mobile and web.
+            are built in React, with CRUD and basic OAuth.
           </p>
           <p>
-            Genuinest is an independent social product: onboarding, feed, reels, profile,
-            messaging, and settings, specified in Figma as a system rather than a set of screens.
+            From September 2025 to March 2026, UX and UI for Genuinest: 50+ screens from onboarding
+            through messaging, then a Play Store launch.
           </p>
           <p>
-            Alongside product work, the novel <span className="text-foreground">Errica</span> is
-            in progress (2024–present), with short stories and poetry.
+            Before that, a three-month web design internship at Setumesh: a responsive site with a
+            clear hierarchy and a consistent interface.
+          </p>
+          <p>
+            Frontend knowledge alongside the design work: React.js, HTML, CSS, and JavaScript. Also
+            content creation, video editing, and generative AI.
           </p>
         </div>
         <aside className="rounded-2xl border border-border bg-card p-6">
@@ -108,20 +105,24 @@ function About() {
           <a href={PROFILE.phoneHref} className="mt-1 block text-sm hover:text-primary">
             {PROFILE.phone}
           </a>
+          <a href={PROFILE.linkedin} className="mt-1 block text-sm hover:text-primary" target="_blank" rel="noreferrer">
+            linkedin.com/in/nikitades
+          </a>
+          <p className="mt-1 text-sm text-muted-foreground">{PROFILE.location}</p>
           <div className="my-6 h-px bg-border" />
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Education</p>
           <dl className="mt-4 space-y-4">
             <div>
-              <dt className="font-display text-lg leading-snug">Bachelor of Computer Science and Engineering</dt>
-              <dd className="mt-1 text-sm text-muted-foreground">Chandigarh University · CGPA 7.6 / 10</dd>
+              <dt className="font-display text-lg leading-snug">B.Tech / B.E. · Computer Science and Engineering</dt>
+              <dd className="mt-1 text-sm text-muted-foreground">Chandigarh University, Mohali · 2026</dd>
             </div>
             <div>
-              <dt className="font-display text-lg leading-snug">Higher secondary · 91%</dt>
-              <dd className="mt-1 text-sm text-muted-foreground">Saint Dominic Savio College · Top 10%</dd>
+              <dt className="font-display text-lg leading-snug">Class XII · 91%</dt>
+              <dd className="mt-1 text-sm text-muted-foreground">CISCE (ICSE/ISC) · English · 2021</dd>
             </div>
             <div>
-              <dt className="font-display text-lg leading-snug">Secondary · 94%</dt>
-              <dd className="mt-1 text-sm text-muted-foreground">Saint Dominic Savio College · Top 5%</dd>
+              <dt className="font-display text-lg leading-snug">Class X · 94%</dt>
+              <dd className="mt-1 text-sm text-muted-foreground">CISCE (ICSE/ISC) · English · 2019</dd>
             </div>
           </dl>
           <div className="my-6 h-px bg-border" />
@@ -136,7 +137,7 @@ function About() {
             <h2 className="mt-2 font-display text-3xl sm:text-4xl">Credentials</h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Formal training, roles held, and selected recognition.
+            Google UX certificates, and selected product work from the resume.
           </p>
         </div>
 
@@ -161,42 +162,22 @@ function About() {
           </ul>
 
           <header className="flex items-baseline justify-between gap-4 border-y border-border bg-surface/60 px-5 py-4 sm:px-6">
-            <h3 className="font-display text-lg">Leadership</h3>
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">02</span>
+            <h3 className="font-display text-lg">Selected work</h3>
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">05</span>
           </header>
-          <ul className="grid sm:grid-cols-2">
-            {roles.map((role) => (
-              <li key={role.title} className="border-b border-border px-5 py-5 sm:px-6 sm:[&:nth-child(odd)]:border-r">
-                <p className="font-display text-xl leading-tight">{role.title}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{role.org}</p>
+          <ul>
+            {achievements.map((item) => (
+              <li key={item.title} className="border-b border-border px-5 py-4 last:border-b-0 sm:px-6">
+                <p className="font-medium leading-snug">{item.title}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.detail}</p>
               </li>
             ))}
           </ul>
 
-          <header className="flex items-baseline justify-between gap-4 border-b border-border bg-surface/60 px-5 py-4 sm:px-6">
-            <h3 className="font-display text-lg">Recognition</h3>
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Academic · Athletics · Competitions</span>
-          </header>
-          <div className="grid md:grid-cols-3">
-            {recognition.map((group) => (
-              <div key={group.label} className="border-b border-border px-5 py-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 sm:px-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">{group.label}</p>
-                <ul className="mt-3 space-y-2.5 text-sm leading-snug text-muted-foreground">
-                  {group.items.map((item) => (
-                    <li key={item} className="text-foreground/85">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
           <div className="border-t border-border bg-surface/40 px-5 py-4 sm:px-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Practice</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Also</p>
             <p className="mt-2 text-sm leading-relaxed text-foreground/85">
-              Sketching, art and literature, and cooking. Literary work includes the novel Errica,
-              short stories, and poetry.
+              English and Hindi. Video editing, sketching, and AI content generation.
             </p>
           </div>
         </div>

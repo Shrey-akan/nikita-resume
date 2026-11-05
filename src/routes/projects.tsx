@@ -1,9 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ExpertFeature } from "@/components/ExpertFeature";
-import { ProductDesignNotes } from "@/components/ProductDesignNotes";
-import { ProductMetrics } from "@/components/ProductMetrics";
+import { FigmaWork } from "@/components/FigmaWork";
 import { ProfileNav } from "@/components/ProfileNav";
-import { banknoteLive, coinzyLive } from "@/lib/product-metrics";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -12,7 +10,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Case studies for Banknote, Coinzy, expert desks, and earlier product work by Nikita Nautiyal.",
+          "UI/UX case studies: role, process, and deliverables for Banknote, Coinzy, 112, Genuinest, and earlier product work.",
       },
       { property: "og:title", content: "Case studies — Nikita Nautiyal" },
     ],
@@ -25,22 +23,28 @@ const shipped = [
     name: "Banknote",
     logo: "/apps/banknotes-logo.png",
     shot: "/apps/banknotes-shot.png",
-    line: "The camera frames a bill. Onboarding, the free scan, and the result all speak about a note.",
-    points: ["Both images, shutter or gallery", "Free-scan limit hit by 1.9% of attempts", "Result shows denomination and security marks"],
-    stats: banknoteLive,
+    line: "AI currency identification. Onboarding, camera scanning, and a structured result, specified in Figma.",
+    points: ["User flows, wireframes, and high-fidelity mobile UI", "Onboarding and camera-based scanning", "Development-ready UI specifications"],
+    stats: [
+      ["Role", "UI/UX"],
+      ["Deliverable", "Flows + UI"],
+    ],
     links: [
       { label: "Product", href: "https://trackzio.com/apps/banknotes" },
       { label: "App Store", href: "https://apps.apple.com/us/app/banknote-identification-ai/id6747063766" },
-      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.trackzio.banknote" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.trackzio.banknote&pcampaignid=web_share" },
     ],
   },
   {
     name: "Coinzy",
     logo: "/apps/coinzy-logo.png",
     shot: "/apps/coinzy-shot.png",
-    line: "Capture starts on two faces. Heads, tails, the quota screen, and the result are Coinzy’s own.",
-    points: ["Heads and tails are two crops", "Free-scan limit hit by 27.3% of attempts", "Result is coin details, grade, and value"],
-    stats: coinzyLive,
+    line: "AI coin identification. Camera-based scanning, onboarding, and reusable result components in Figma.",
+    points: ["Camera-based coin scanning", "Onboarding and identification results", "Reusable UI components"],
+    stats: [
+      ["Role", "UI/UX"],
+      ["Deliverable", "Flows + UI"],
+    ],
     links: [
       { label: "Product", href: "https://trackzio.com/apps/coinzy" },
       { label: "App Store", href: "https://apps.apple.com/us/app/coinzy-coin-ai-identification/id6752857760" },
@@ -52,24 +56,26 @@ const shipped = [
 const studies = [
   {
     n: "01",
-    title: "112 Emergency",
-    tag: "Public service · India",
-    desc: "An audit of the emergency journey, then a redesign of SOS, location, and response navigation.",
+    title: "Genuinest",
+    tag: "Social · Play Store",
+    desc: "50+ screens from onboarding through messaging, then a Play Store launch.",
     bullets: [
-      "Audited 10+ screens covering 90% of the core journey.",
-      "Found 12 usability issues and resolved 65% of the high-friction interactions.",
-      "Redesigned 6 flows and cut confusion by 35%. The prototype has 50+ screens.",
+      "Role: UX and UI designer, September 2025 to March 2026.",
+      "User, product, and competitor research, then journeys, wireframes, and flows.",
+      "Deliverable: prototypes, developer validation, and the live onboarding UI.",
     ],
   },
   {
     n: "02",
-    title: "Genuinest",
-    tag: "Social · iOS",
-    desc: "Onboarding through messaging, specified as a Figma system a team can extend.",
+    title: "112 Emergency",
+    tag: "Public service · India",
+    desc: "An audit of the emergency journey, then a redesign of SOS, location, and response navigation.",
+    href: "https://www.figma.com/design/SBny0dJeByGXA7DOpwlZix/112?node-id=275-1822",
+    proto: "https://www.figma.com/proto/SBny0dJeByGXA7DOpwlZix/112?node-id=235-739&scaling=min-zoom&content-scaling=fixed&page-id=219%3A74",
     bullets: [
-      "50+ screens: onboarding, feed, reels, profile, messaging, and settings.",
-      "Compared 5+ social products before the system was drawn.",
-      "Wireframes, a prototype, and a reusable component set.",
+      "Role: UI/UX audit and redesign.",
+      "Audited 10+ screens covering 90% of the core journey and found 12 usability issues.",
+      "Redesigned 6 flows. Deliverable: an interactive prototype of 50+ screens.",
     ],
   },
   {
@@ -77,10 +83,11 @@ const studies = [
     title: "Music player",
     tag: "Streaming · Prototype",
     desc: "Home, discovery, playlists, and the player, with a component set for the listening session.",
+    href: "https://www.figma.com/design/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=0-1",
     bullets: [
-      "7+ screens across home, discovery, playlists, and the player.",
-      "8 sections restructured, with section clarity up 40%.",
-      "12 genre cards, 30+ components, and 10+ micro-interactions.",
+      "Role: UI/UX for a listening session, not a single screen.",
+      "Restructured 8 sections across home, discovery, playlists, and the player.",
+      "Deliverable: 30+ components, 12 genre cards, and 10+ micro-interactions.",
     ],
   },
   {
@@ -89,9 +96,9 @@ const studies = [
     tag: "Interface prototype",
     desc: "A reusable decision module for four smoothie variants.",
     bullets: [
-      "6 layouts tested for hierarchy.",
-      "12+ states for selection, transition, and feedback. Decision friction down 30%.",
-      "One prototype, with flow efficiency up 25%.",
+      "Role: interaction design for a repeated choice.",
+      "Tested 6 layouts, then specified 12+ states for selection, transition, and feedback.",
+      "Deliverable: one prototype of the decision module.",
     ],
   },
 ];
@@ -102,7 +109,7 @@ function Projects() {
       <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Case studies</p>
       <h1 className="mt-4 font-display text-4xl leading-[0.95] sm:text-6xl">Selected work</h1>
       <p className="mt-5 max-w-2xl text-muted-foreground">
-        Shipped apps, earlier studies, and the expert desks. Each block is one kind of work.
+        Each study names the role, the problem, and what was delivered: flows, UI, and a Figma file a team can build from.
       </p>
       <ProfileNav className="mt-8" />
 
@@ -119,12 +126,8 @@ function Projects() {
                     <img src={product.logo} alt="" className="size-10 rounded-xl object-cover" />
                     <h3 className="font-display text-2xl">{product.name}</h3>
                   </div>
-                  <dl className="mt-4 grid grid-cols-3 gap-2">
-                    {[
-                      ["Downloads", product.stats.downloads],
-                      ["Rating", product.stats.rating],
-                      ["Daily users", product.stats.dailyUsers],
-                    ].map(([label, value]) => (
+                  <dl className="mt-4 grid grid-cols-2 gap-2">
+                    {product.stats.map(([label, value]) => (
                       <div key={label}>
                         <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{label}</dt>
                         <dd className="font-display text-xl">{value}</dd>
@@ -149,14 +152,11 @@ function Projects() {
             </article>
           ))}
         </div>
-        <div className="mt-4">
-          <ProductMetrics />
-        </div>
       </section>
 
       <section className="mt-16">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">02 · Studies</p>
-        <h2 className="mt-2 font-display text-3xl sm:text-4xl">Earlier product work</h2>
+        <h2 className="mt-2 font-display text-3xl sm:text-4xl">Genuinest and other studies</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {studies.map((study) => (
             <article key={study.n} className="rounded-2xl border border-border bg-card p-5">
@@ -168,29 +168,45 @@ function Projects() {
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
+              {"href" in study && study.href ? (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <a href={study.href} target="_blank" rel="noreferrer" className="inline-flex rounded-full border border-border px-3 py-1 text-xs hover:text-primary">
+                    Open in Figma
+                  </a>
+                  {"proto" in study && study.proto ? (
+                    <a href={study.proto} target="_blank" rel="noreferrer" className="inline-flex rounded-full border border-border px-3 py-1 text-xs hover:text-primary">
+                      Open prototype
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
             </article>
           ))}
         </div>
       </section>
 
       <section className="mt-16">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">03 · Web</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">03 · Projects</p>
+        <h2 className="mt-2 font-display text-3xl sm:text-4xl">Projects and posters</h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          Music App, the 112 frame, and WOKSPACE open in Figma. The posters sit beside them.
+        </p>
+        <div className="mt-6">
+          <FigmaWork />
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">04 · Web</p>
         <h2 className="mt-2 font-display text-3xl sm:text-4xl">Expert desks</h2>
         <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-          Four products. The navigation matches. The report is written for the object in front of the expert.
+          Four products. Expert review is written for the object in front of the camera.
         </p>
         <div className="mt-6">
           <ExpertFeature />
         </div>
       </section>
 
-      <section className="mt-16">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">04 · Tests</p>
-        <h2 className="mt-2 font-display text-3xl sm:text-4xl">Coinzy experiments</h2>
-        <div className="mt-6">
-          <ProductDesignNotes />
-        </div>
-      </section>
     </div>
   );
 }

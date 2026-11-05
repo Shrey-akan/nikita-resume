@@ -5,38 +5,25 @@ import { cn } from "@/lib/utils";
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
+  const dark = theme === "dark";
+
   return (
-    <div
-      className="inline-flex items-center rounded-md border border-border bg-muted/60 p-0.5"
-      role="group"
-      aria-label="Color theme"
+    <button
+      type="button"
+      onClick={() => setTheme(dark ? "light" : "dark")}
+      className="relative inline-flex h-9 w-16 items-center rounded-full border border-border bg-surface px-1 transition-colors hover:border-primary"
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={dark}
+      title={dark ? "Light mode" : "Dark mode"}
     >
-      <button
-        type="button"
-        onClick={() => setTheme("dark")}
+      <Sun className={cn("absolute left-2 size-3.5 transition-opacity", dark ? "opacity-40" : "text-primary opacity-100")} />
+      <Moon className={cn("absolute right-2 size-3.5 transition-opacity", dark ? "text-primary opacity-100" : "opacity-40")} />
+      <span
         className={cn(
-          "inline-flex h-8 w-8 items-center justify-center rounded-sm transition-colors",
-          theme === "dark" ? "bg-background text-primary shadow-sm" : "text-muted-foreground hover:text-foreground",
+          "relative z-10 size-7 rounded-full bg-primary shadow-sm transition-transform duration-300",
+          dark ? "translate-x-7" : "translate-x-0",
         )}
-        aria-label="Dark mode"
-        aria-pressed={theme === "dark"}
-        title="Dark mode"
-      >
-        <Moon className="h-3.5 w-3.5" />
-      </button>
-      <button
-        type="button"
-        onClick={() => setTheme("light")}
-        className={cn(
-          "inline-flex h-8 w-8 items-center justify-center rounded-sm transition-colors",
-          theme === "light" ? "bg-background text-primary shadow-sm" : "text-muted-foreground hover:text-foreground",
-        )}
-        aria-label="Light mode"
-        aria-pressed={theme === "light"}
-        title="Light mode"
-      >
-        <Sun className="h-3.5 w-3.5" />
-      </button>
-    </div>
+      />
+    </button>
   );
 }

@@ -2,6 +2,8 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import { AuthProvider } from "@/components/AuthProvider";
 import { FeedbackProvider } from "@/components/FeedbackProvider";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { BubbleField } from "@/components/BubbleField";
+import { SiteMotion } from "@/components/SiteMotion";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
@@ -35,26 +37,26 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nikita Nautiyal — UI/UX Designer" },
+      { title: "Nikita Nautiyal — Associate Product Designer" },
       {
         name: "description",
         content:
-          "Portfolio of Nikita Nautiyal, UI/UX designer. User research, product flows, and high-fidelity prototypes.",
+          "Portfolio of Nikita Nautiyal, Associate Product Designer in Bengaluru. UI/UX for mobile and web, Figma systems, and frontend handovers.",
       },
       { name: "author", content: "Nikita Nautiyal" },
-      { property: "og:title", content: "Nikita Nautiyal — UI/UX Designer" },
+      { property: "og:title", content: "Nikita Nautiyal — Associate Product Designer" },
       {
         property: "og:description",
         content:
-          "Portfolio of Nikita Nautiyal, UI/UX designer. User research, product flows, and high-fidelity prototypes.",
+          "Portfolio of Nikita Nautiyal, Associate Product Designer in Bengaluru. UI/UX for mobile and web, Figma systems, and frontend handovers.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Nikita Nautiyal — UI/UX Designer" },
+      { name: "twitter:title", content: "Nikita Nautiyal — Associate Product Designer" },
       {
         name: "twitter:description",
         content:
-          "Portfolio of Nikita Nautiyal, UI/UX designer. User research, product flows, and high-fidelity prototypes.",
+          "Portfolio of Nikita Nautiyal, Associate Product Designer in Bengaluru. UI/UX for mobile and web, Figma systems, and frontend handovers.",
       },
       {
         property: "og:image",
@@ -76,7 +78,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Outfit:wght@400;500&family=Syne:wght@500;700&display=swap",
       },
       {
         rel: "stylesheet",
@@ -111,9 +113,11 @@ function RootComponent() {
     <ThemeProvider>
       <FeedbackProvider>
         <AuthProvider>
-          <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+          <div className="relative min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+            <BubbleField />
+            <SiteMotion />
             <SiteHeader />
-            <main className="flex-1">
+            <main className="relative z-10 flex-1">
               <Outlet />
             </main>
             <SiteFooter />
