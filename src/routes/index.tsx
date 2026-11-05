@@ -77,20 +77,20 @@ const projects = [
   {
     title: "Music player",
     line: "Home, discovery, and the player",
-    image: "",
+    image: "/work/music-thumb.jpg",
     href: "https://www.figma.com/proto/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=266-498&p=f&viewport=-214%2C164%2C0.08&t=DEfbH1pjOrdfOVHB-1&scaling=scale-down-width&content-scaling=fixed&page-id=133%3A2060",
   },
   {
     title: "Wokspace",
-    line: "Workspace design",
-    image: "/work/wokspace-thumb.jpg",
+    line: "Habit tracker",
+    image: "/work/wokspace-thumb.jpg?v=2",
     href: "https://www.figma.com/design/c09c82RdpY1uEP1vlQNzHt/WOKSPACE?node-id=0-1&t=5NyZoN5Cick7y90y-1",
   },
   {
     title: "Chatbot",
-    line: "RCRM UX assignment",
-    image: "/work/chatbot-thumb.jpg",
-    href: "https://www.figma.com/design/lIzkPlPCMN3ocGuISAACQT/Nikita--RCRM-Assignment--UX-?node-id=0-1&t=iSeFUz4CF4s6nX82-1",
+    line: "Chat assistant",
+    image: "/work/chatbot-thumb.jpg?v=2",
+    href: "https://www.figma.com/design/GhuAyaFiJ59WX6lQabx2da/Chatbot?node-id=0-1&t=mDK3sn88WMlkU0Jm-1",
   },
   {
     title: "PETAPP",
@@ -104,11 +104,20 @@ const projects = [
     image: "/work/smoothie-thumb.jpg",
     href: "https://www.figma.com/proto/vKKx0rfIDwI9boHVuXL7KY/Smoothie-crousel?node-id=2-5&p=f&viewport=33%2C255%2C0.1&t=xLRoUXVmWC9AejLK-1&scaling=contain&content-scaling=fixed&page-id=0%3A1",
   },
+];
+
+const posters = [
   {
-    title: "Wirex",
+    title: "Nike",
+    line: "Air Force poster",
+    image: "/work/nike-airforce.jpg",
+    href: "https://www.figma.com/proto/ki8BnfPITG4bB2tYPZbD1g/Nike-Poster-Design?node-id=3-2&p=f&viewport=43%2C258%2C0.2&t=XUXltn9O5ZRIWBM2-1&scaling=contain&content-scaling=fixed&page-id=0%3A1",
+  },
+  {
+    title: "WireX",
     line: "Limited edition poster",
     image: "/work/wirex.jpg",
-    href: "/projects",
+    href: "https://www.figma.com/proto/UUSy2FBTtfhLNxWPAGBi4O/HeadPhone-Poster?node-id=4-16&viewport=120%2C204%2C0.12&t=UURYuRASl6OFM2xT-1&scaling=contain&content-scaling=fixed&page-id=0%3A1",
   },
 ];
 
@@ -208,12 +217,8 @@ function Index() {
                 {...(external(href) ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="group block"
               >
-                <span className="block overflow-hidden rounded-[1.4rem] border border-border bg-card">
-                  <img
-                    src={job.image}
-                    alt=""
-                    className="aspect-[4/3] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
-                  />
+                <span className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[1.4rem] border border-border bg-card">
+                  <img src={job.image} alt="" className="h-full w-full object-contain" />
                 </span>
                 <span className="mt-4 block font-display text-2xl leading-tight text-heading transition-colors group-hover:text-primary">
                   {job.title}
@@ -275,13 +280,9 @@ function Index() {
                 {...(external(project.href) ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="group block"
               >
-                <span className="block overflow-hidden rounded-[1.4rem] border border-border bg-surface">
+                <span className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[1.4rem] border border-border bg-surface">
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt=""
-                      className="aspect-[4/3] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
-                    />
+                    <img src={project.image} alt="" className="h-full w-full object-contain" />
                   ) : (
                     <span className="flex aspect-[4/3] items-end bg-secondary p-5">
                       <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Figma</span>
@@ -308,8 +309,32 @@ function Index() {
         </div>
       </section>
 
-      <section id="achievements" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
+      <section id="posters" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">06</p>
+        <h2 className="mt-2 font-display text-3xl md:text-5xl">Posters</h2>
+        <div className="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
+          {posters.map((poster) => (
+            <a
+              key={poster.title}
+              href={poster.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group block"
+            >
+              <span className="flex aspect-[3/4] w-full items-center justify-center overflow-hidden rounded-[1.4rem] border border-border bg-surface">
+                <img src={poster.image} alt="" className="h-full w-full object-contain" />
+              </span>
+              <span className="mt-4 block font-display text-2xl leading-tight text-heading transition-colors group-hover:text-primary">
+                {poster.title}
+              </span>
+              <span className="mt-1 block text-sm text-muted-foreground">{poster.line}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section id="achievements" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">07</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Achievements</h2>
         <div className="mt-8 grid gap-3">
           {achievements.map((item) => (
@@ -335,7 +360,7 @@ function Index() {
       </section>
 
       <section id="languages" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">07</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">08</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Languages</h2>
         <ul className="mt-6 flex flex-wrap gap-3">
           {languages.map((language) => (
@@ -347,7 +372,7 @@ function Index() {
       </section>
 
       <section id="education" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">08</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">09</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Education</h2>
         <div className="mt-8 grid gap-3">
           {education.map((item) => (
@@ -360,7 +385,7 @@ function Index() {
       </section>
 
       <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">09</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">10</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Contact</h2>
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-3">
