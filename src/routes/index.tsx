@@ -125,27 +125,22 @@ const achievements = [
   {
     title: "Live Genuinest onboarding",
     detail: "Onboarding UI for the live app, then a Play Store launch.",
-    href: "https://genuinest.com/",
   },
   {
     title: "Four live store listings",
     detail: "App icons and store screenshots for the Trackzio apps.",
-    href: "https://trackzio.com",
   },
   {
     title: "15% higher retention",
     detail: "Identification journey, from research through the redesigned flow.",
-    href: "https://trackzio.com",
   },
   {
     title: "90k+ views",
     detail: "Product content and AI video for the Trackzio apps.",
-    href: "https://trackzio.com",
   },
   {
     title: "Expert portal",
     detail: "End-to-end UI for expert review on web and mobile.",
-    href: "https://trackzio.com",
   },
 ];
 
@@ -189,11 +184,18 @@ function Index() {
             Figma
           </p>
           <img
-            src="/nikita-line.png"
+            src="/nikita-line.png?v=5"
             alt="Line illustration of Nikita Nautiyal sitting and drawing"
             width={1024}
             height={1024}
-            className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[min(88vw,34rem)] -translate-x-1/2 -translate-y-[46%]"
+            className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[min(88vw,34rem)] -translate-x-1/2 -translate-y-[46%] dark:hidden"
+          />
+          <img
+            src="/nikita-line-dark.png?v=5"
+            alt="Colored illustration of Nikita Nautiyal sitting and drawing"
+            width={1024}
+            height={1024}
+            className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden w-[min(88vw,34rem)] -translate-x-1/2 -translate-y-[46%] dark:block"
           />
         </div>
         <p className="mx-auto mt-2 max-w-3xl text-lg leading-relaxed text-muted-foreground">
@@ -338,23 +340,10 @@ function Index() {
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Achievements</h2>
         <div className="mt-8 grid gap-3">
           {achievements.map((item) => (
-            <a
-              key={item.title}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card px-5 py-5 transition hover:border-primary sm:px-6"
-            >
-              <span className="min-w-0">
-                <span className="block font-display text-2xl leading-tight text-heading transition-colors group-hover:text-primary">
-                  {item.title}
-                </span>
-                <span className="mt-1 block text-sm text-muted-foreground">{item.detail}</span>
-              </span>
-              <span aria-hidden className="shrink-0 font-mono text-sm text-primary">
-                ↗
-              </span>
-            </a>
+            <article key={item.title} className="rounded-2xl border border-border bg-card px-5 py-5 sm:px-6">
+              <h3 className="font-display text-2xl leading-tight text-heading">{item.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{item.detail}</p>
+            </article>
           ))}
         </div>
       </section>
