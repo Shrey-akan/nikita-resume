@@ -60,33 +60,33 @@ const tools = [
 
 const projects = [
   {
-    title: "112 Emergency",
+    title: "112 SOS India Emergency App",
     line: "SOS, location, and response",
-    image: "/work/112-thumb.jpg",
+    image: "/work/112-thumb.jpg?v=4",
     href: "https://www.figma.com/proto/SBny0dJeByGXA7DOpwlZix/112?node-id=235-739&p=f&viewport=395%2C151%2C0.04&t=CAIw7D6gde8tpHkH-1&scaling=min-zoom&content-scaling=fixed&page-id=219%3A74",
   },
   {
     title: "Music player",
     line: "Home, discovery, and the player",
-    image: "/work/music-thumb.jpg",
+    image: "/work/music-thumb.jpg?v=3",
     href: "https://www.figma.com/proto/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=228-652&viewport=-214%2C164%2C0.08&t=NGCMy4nZTdyx5BHi-1&scaling=scale-down-width&content-scaling=fixed&page-id=133%3A2060",
   },
   {
     title: "Wokspace",
     line: "Habit tracker",
-    image: "/work/wokspace-thumb.jpg?v=2",
+    image: "/work/wokspace-thumb.jpg?v=3",
     href: "https://www.figma.com/design/c09c82RdpY1uEP1vlQNzHt/WOKSPACE?node-id=0-1&t=5NyZoN5Cick7y90y-1",
   },
   {
     title: "Chatbot",
     line: "Chat assistant",
-    image: "/work/chatbot-thumb.jpg?v=2",
+    image: "/work/chatbot-thumb.jpg?v=4",
     href: "https://www.figma.com/design/GhuAyaFiJ59WX6lQabx2da/Chatbot?node-id=0-1&t=mDK3sn88WMlkU0Jm-1",
   },
   {
     title: "PETAPP",
     line: "Dog app",
-    image: "/work/petapp-thumb.jpg",
+    image: "/work/petapp-thumb.jpg?v=3",
     href: "https://www.figma.com/design/u5WTOC8nazj7TtnoDHggsG/DOG-APP?node-id=84-99&t=sIXIpNBczPKd4kJq-1",
   },
   {
@@ -255,7 +255,7 @@ function Index() {
         </ul>
       </section>
 
-      <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
+      <section id="projects" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-12 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">05</p>
@@ -273,11 +273,11 @@ function Index() {
                 {...(external(project.href) ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="group block"
               >
-                <span className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[1.4rem] border border-border bg-surface">
+                <span className="flex aspect-[3/2] w-full items-center justify-center overflow-hidden rounded-[1.4rem] border border-border bg-surface">
                   {project.image ? (
-                    <img src={project.image} alt="" className="h-full w-full object-contain" />
+                    <img src={project.image} alt="" className="h-full w-full object-contain object-center" />
                   ) : (
-                    <span className="flex aspect-[4/3] items-end bg-secondary p-5">
+                    <span className="flex h-full items-end bg-secondary p-5">
                       <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Figma</span>
                     </span>
                   )}

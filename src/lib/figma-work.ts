@@ -10,7 +10,7 @@ export const figmaFiles = [
     href: "https://www.figma.com/design/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=241-520",
   },
   {
-    title: "112 Emergency",
+    title: "112 SOS India Emergency App",
     note: "SOS, location confirmation, and the response journey.",
     href: "https://www.figma.com/design/SBny0dJeByGXA7DOpwlZix/112?node-id=275-1822",
   },

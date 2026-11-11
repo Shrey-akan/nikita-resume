@@ -64,7 +64,7 @@ const studies = [
   },
   {
     n: "02",
-    title: "112 Emergency",
+    title: "112 SOS India Emergency App",
     tag: "Public service · India",
     desc: "An audit of the emergency journey, then a redesign of SOS, location, and response navigation.",
     href: "https://www.figma.com/design/SBny0dJeByGXA7DOpwlZix/112?node-id=275-1822",
