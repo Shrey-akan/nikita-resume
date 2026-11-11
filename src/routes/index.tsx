@@ -69,7 +69,7 @@ const projects = [
     title: "Music player",
     line: "Home, discovery, and the player",
     image: "/work/music-thumb.jpg",
-    href: "https://www.figma.com/proto/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=266-498&p=f&viewport=-214%2C164%2C0.08&t=DEfbH1pjOrdfOVHB-1&scaling=scale-down-width&content-scaling=fixed&page-id=133%3A2060",
+    href: "https://www.figma.com/proto/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=228-652&viewport=-214%2C164%2C0.08&t=NGCMy4nZTdyx5BHi-1&scaling=scale-down-width&content-scaling=fixed&page-id=133%3A2060",
   },
   {
     title: "Wokspace",

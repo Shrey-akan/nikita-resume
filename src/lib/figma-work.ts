@@ -2,7 +2,7 @@ export const figmaFiles = [
   {
     title: "Music App",
     note: "Home, discovery, playlists, and the player in one Figma file.",
-    href: "https://www.figma.com/design/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=0-1",
+    href: "https://www.figma.com/proto/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=228-652&viewport=-214%2C164%2C0.08&t=NGCMy4nZTdyx5BHi-1&scaling=scale-down-width&content-scaling=fixed&page-id=133%3A2060",
   },
   {
     title: "Music App · frame",

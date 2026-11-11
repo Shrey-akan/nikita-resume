@@ -80,7 +80,7 @@ const studies = [
     title: "Music player",
     tag: "Streaming · Prototype",
     desc: "Home, discovery, playlists, and the player, with a component set for the listening session.",
-    href: "https://www.figma.com/design/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=0-1",
+    href: "https://www.figma.com/proto/qmvVXGEwSXx4OyYsiEiS6p/Music-App?node-id=228-652&viewport=-214%2C164%2C0.08&t=NGCMy4nZTdyx5BHi-1&scaling=scale-down-width&content-scaling=fixed&page-id=133%3A2060",
     bullets: [
       "Role: UI/UX for a listening session, not a single screen.",
       "Restructured 8 sections across home, discovery, playlists, and the player.",
