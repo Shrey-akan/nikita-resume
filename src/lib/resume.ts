@@ -1,4 +1,4 @@
-export const RESUME_PDF_PATH = "/Nikita-Nautiyal-Resume.pdf?v=11";
+export const RESUME_PDF_PATH = "/Nikita-Nautiyal-Resume.pdf?v=12";
 export const RESUME_PDF_FILENAME = "Nikita-Nautiyal-Resume.pdf";
 export const COVER_LETTER_PDF_PATH = "/Nikita-Nautiyal-Cover-Letter.pdf?v=2";
 export const COVER_LETTER_PDF_FILENAME = "Nikita-Nautiyal-Cover-Letter.pdf";
