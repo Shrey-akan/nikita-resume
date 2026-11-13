@@ -58,6 +58,21 @@ const tools = [
   { name: "Canva", icon: "/tools/canva.svg" },
 ];
 
+const caseStudies = [
+  {
+    title: "112 SOS app",
+    line: "Emergency SOS, location, and response",
+    image: "/work/112-thumb.jpg?v=4",
+    href: "https://www.figma.com/proto/SBny0dJeByGXA7DOpwlZix/112?node-id=275-2299&viewport=-218%2C73%2C0.2&t=eEfojE8aEQLjOo0L-1&scaling=scale-down-width&content-scaling=fixed&page-id=275%3A1822",
+  },
+  {
+    title: "Wokspace",
+    line: "Habit tracker app",
+    image: "/work/wokspace-thumb.jpg?v=3",
+    href: "https://www.figma.com/proto/KKMdK9WOAAoAB4or0VvBW5/Wokspace-Casestudy?node-id=1-2&viewport=266%2C326%2C0.09&t=6THXRBS0NUFbFgFS-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1%3A2&page-id=0%3A1",
+  },
+];
+
 const projects = [
   {
     title: "112 SOS India Emergency App",
@@ -255,10 +270,34 @@ function Index() {
         </ul>
       </section>
 
+      <section id="case-studies" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-12 sm:px-6">
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">05</p>
+        <h2 className="mt-2 font-display text-3xl md:text-5xl">Case Study</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {caseStudies.map((study) => (
+            <a
+              key={study.title}
+              href={study.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group block"
+            >
+              <span className="flex aspect-[3/2] w-full items-center justify-center overflow-hidden rounded-[1.4rem] border border-border bg-surface">
+                <img src={study.image} alt="" className="h-full w-full object-contain object-center" />
+              </span>
+              <span className="mt-4 block font-display text-2xl leading-tight text-heading transition-colors group-hover:text-primary">
+                {study.title}
+              </span>
+              <span className="mt-1 block text-sm text-muted-foreground">{study.line}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section id="projects" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-12 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">05</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">06</p>
             <h2 className="mt-2 font-display text-3xl md:text-5xl">Projects</h2>
           </div>
           <Link to="/projects" className="text-sm text-muted-foreground hover:text-primary">
@@ -303,7 +342,7 @@ function Index() {
       </section>
 
       <section id="posters" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">06</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">07</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Posters</h2>
         <div className="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
           {posters.map((poster) => (
@@ -327,7 +366,7 @@ function Index() {
       </section>
 
       <section id="achievements" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">07</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">08</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Achievements</h2>
         <div className="mt-8 grid gap-3">
           {achievements.map((item) => (
@@ -340,7 +379,7 @@ function Index() {
       </section>
 
       <section id="languages" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">08</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">09</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Languages</h2>
         <ul className="mt-6 flex flex-wrap gap-3">
           {languages.map((language) => (
@@ -352,7 +391,7 @@ function Index() {
       </section>
 
       <section id="education" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">09</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">10</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Education</h2>
         <div className="mt-8 grid gap-3">
           {education.map((item) => (
@@ -365,7 +404,7 @@ function Index() {
       </section>
 
       <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">10</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">11</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Contact</h2>
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-3">
