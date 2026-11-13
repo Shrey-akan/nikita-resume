@@ -273,17 +273,21 @@ function Index() {
       <section id="case-studies" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-12 sm:px-6">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">05</p>
         <h2 className="mt-2 font-display text-3xl md:text-5xl">Case Study</h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 items-stretch gap-6 md:grid-cols-2">
           {caseStudies.map((study) => (
             <a
               key={study.title}
               href={study.href}
               target="_blank"
               rel="noreferrer"
-              className="group block"
+              className="group flex min-w-0 flex-col"
             >
-              <span className="flex aspect-[3/2] w-full items-center justify-center overflow-hidden rounded-[1.4rem] border border-border bg-surface">
-                <img src={study.image} alt="" className="h-full w-full object-contain object-center" />
+              <span className="relative block aspect-[3/2] w-full overflow-hidden rounded-[1.5rem] border border-border bg-card">
+                <img
+                  src={study.image}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-contain object-center"
+                />
               </span>
               <span className="mt-4 block font-display text-2xl leading-tight text-heading transition-colors group-hover:text-primary">
                 {study.title}
