@@ -70,9 +70,6 @@ export function SiteFooter() {
               {link.label}
             </a>
           ))}
-          <Link to="/login" className="w-fit text-muted-foreground hover:text-primary">
-            Log in
-          </Link>
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Profile</p>

@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { useFeedback } from "@/components/FeedbackProvider";
@@ -19,7 +19,6 @@ export const Route = createFileRoute("/studio")({
 function Studio() {
   const { user, ready, token } = useAuth();
   const feedback = useFeedback();
-  const navigate = useNavigate();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [inbox, setInbox] = useState<ContactMessage[]>([]);
   const [users, setUsers] = useState<StudioUser[]>([]);
@@ -29,13 +28,6 @@ function Studio() {
   const [saving, setSaving] = useState(false);
 
   const isAdmin = user?.role === "admin";
-
-  useEffect(() => {
-    if (!ready) return;
-    if (!user) {
-      void navigate({ to: "/login", search: { redirect: "/studio", tab: "login" } });
-    }
-  }, [ready, user, navigate]);
 
   useEffect(() => {
     if (!token || !isAdmin) return;
@@ -154,23 +146,16 @@ function Studio() {
   const pending = useMemo(() => posts.filter((post) => post.status === "pending"), [posts]);
   const editingLabel = form.id ? "Editing existing post" : "New admin post";
 
-  if (!ready || !user) {
+  if (!ready) {
     return <div className="mx-auto max-w-md px-4 py-24 text-muted-foreground sm:px-6">Checking admin access…</div>;
   }
 
-  if (!isAdmin) {
+  if (!user || !isAdmin) {
     return (
       <div className="mx-auto max-w-md px-4 py-24 sm:px-6">
         <p className="font-mono text-xs uppercase tracking-widest text-primary mb-4">Admin</p>
         <h1 className="font-display text-4xl mb-4">Admin only</h1>
-        <p className="text-sm text-muted-foreground mb-6">
-          This page is for the site admin. Log in with the admin account to review posts and users.
-        </p>
-        <Button asChild>
-          <Link to="/login" search={{ redirect: "/studio", tab: "login" }}>
-            Log in as admin
-          </Link>
-        </Button>
+        <p className="text-sm text-muted-foreground">This page is for the site admin.</p>
       </div>
     );
   }

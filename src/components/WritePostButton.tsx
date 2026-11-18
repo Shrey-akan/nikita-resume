@@ -9,17 +9,10 @@ const styles =
 export function WritePostButton({ className }: { className?: string }) {
   const { user, ready } = useAuth();
 
-  if (ready && user) {
-    return (
-      <Link to="/write" className={cn(styles, className)}>
-        <PenLine className="h-4 w-4" />
-        Write
-      </Link>
-    );
-  }
+  if (!ready || !user) return null;
 
   return (
-    <Link to="/login" search={{ redirect: "/write", tab: "register" }} className={cn(styles, className)}>
+    <Link to="/write" className={cn(styles, className)}>
       <PenLine className="h-4 w-4" />
       Write
     </Link>

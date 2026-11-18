@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
-import { AuthForm } from "@/components/AuthForm";
 import { useAuth } from "@/components/AuthProvider";
 import { useFeedback } from "@/components/FeedbackProvider";
 import { BlogEditorFields, emptyBlogForm, type BlogFormState } from "@/components/BlogEditorFields";
@@ -12,7 +11,7 @@ export const Route = createFileRoute("/write")({
   head: () => ({
     meta: [
       { title: "Write — Nikita Nautiyal" },
-      { name: "description", content: "Create an account, log in, and submit a blog for review." },
+      { name: "description", content: "Submit a blog for review." },
     ],
   }),
   component: WritePage,
@@ -108,11 +107,8 @@ function WritePage() {
     return (
       <div className="mx-auto max-w-md px-4 py-14 sm:px-6 sm:py-20 md:py-28">
         <p className="font-mono text-xs uppercase tracking-widest text-primary mb-4">Write</p>
-        <h1 className="mb-3 font-display text-3xl sm:text-4xl md:text-5xl">Sign in to write</h1>
-        <p className="text-muted-foreground mb-8">
-          Create an account or log in with the same email. Posts go live after admin approval.
-        </p>
-        <AuthForm defaultTab="register" />
+        <h1 className="mb-3 font-display text-3xl sm:text-4xl md:text-5xl">Writing is closed</h1>
+        <p className="text-muted-foreground">New accounts and sign-in are paused for now.</p>
       </div>
     );
   }

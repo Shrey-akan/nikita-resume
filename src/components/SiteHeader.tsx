@@ -171,14 +171,7 @@ export function SiteHeader() {
                 </div>
               ) : null}
             </div>
-          ) : (
-            <Link
-              to="/login"
-              className="inline-flex items-center rounded-md border border-border px-2.5 py-1.5 font-mono text-[11px] transition-colors hover:border-primary hover:text-primary sm:px-3 sm:py-2 sm:text-xs"
-            >
-              Log in
-            </Link>
-          )}
+          ) : null}
           <button
             type="button"
             className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border lg:hidden"
@@ -220,12 +213,9 @@ export function SiteHeader() {
             >
               Download resume
             </a>
-            <Link to="/write" className={navLinkClass} activeProps={{ className: navActiveClass }} onClick={closeNav}>
-              Write
-            </Link>
-            {!user ? (
-              <Link to="/login" className={navLinkClass} activeProps={{ className: navActiveClass }} onClick={closeNav}>
-                Log in
+            {ready && user ? (
+              <Link to="/write" className={navLinkClass} activeProps={{ className: navActiveClass }} onClick={closeNav}>
+                Write
               </Link>
             ) : null}
           </div>

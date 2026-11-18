@@ -25,8 +25,6 @@ export function BlogEngagement({
   const [comments, setComments] = useState<PublicComment[]>([]);
   const [body, setBody] = useState("");
   const [busy, setBusy] = useState(false);
-  const loginHref = `/login?redirect=${encodeURIComponent(`/blog/${slug}`)}`;
-
   useEffect(() => {
     if (!ready) return;
     void getPostEngagement({ data: { slug, token: token || undefined } })
@@ -41,10 +39,7 @@ export function BlogEngagement({
   }, [ready, slug, token]);
 
   async function onLike() {
-    if (!user || !token) {
-      window.location.href = loginHref;
-      return;
-    }
+    if (!user || !token) return;
     try {
       const result = await toggleLike({ data: { token, slug } });
       setLiked(result.liked);
@@ -57,10 +52,7 @@ export function BlogEngagement({
 
   async function onComment(event: FormEvent) {
     event.preventDefault();
-    if (!user || !token) {
-      window.location.href = loginHref;
-      return;
-    }
+    if (!user || !token) return;
     setBusy(true);
     try {
       const comment = await addComment({ data: { token, slug, body } });
@@ -114,14 +106,7 @@ export function BlogEngagement({
 
       <div className="mt-10">
         <h2 className="font-display text-2xl sm:text-3xl">Comments</h2>
-        {!user ? (
-          <p className="mt-3 text-sm text-muted-foreground">
-            <a href={loginHref} className="text-foreground underline-offset-2 hover:underline">
-              Log in
-            </a>{" "}
-            to like and comment.
-          </p>
-        ) : (
+        {user ? (
           <form onSubmit={onComment} className="mt-5 space-y-3">
             <Textarea
               value={body}
