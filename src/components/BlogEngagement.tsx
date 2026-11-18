@@ -119,7 +119,7 @@ export function BlogEngagement({
               {busy ? "Posting…" : "Post comment"}
             </Button>
           </form>
-        )}
+        ) : null}
 
         <div className="mt-8 space-y-4">
           {comments.length === 0 ? (
